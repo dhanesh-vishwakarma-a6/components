@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
+
+.container-fluid {
+  /* visuals */
+  background-image: linear-gradient(#eeaeca, #94bbe9);
+  /* box model */
+  width: 100vw;
+  height: 100vh;
+  /* typography */
+  font-family: "raleway", Courier New, Courier, monospace;
+}
+
+.form-container {
+  /* box model */
+  width: 25rem;
+  padding: 1rem;
+  /* visuals */
+  background-color: white;
+}
+
+/* social media */
+.social-icons i {
+  /* typography */
+  font-size: 1.5rem;
+  /* box model */
+  margin: 1rem;
+  /* misc */
+  cursor: pointer;
+}
