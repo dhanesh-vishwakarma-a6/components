@@ -1,0 +1,73 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /* visuals */
+  color: #fff;
+  background-color: #000;
+  /* typography */
+  text-align: center;
+}
+
+.container {
+  /* box model */
+  width: 100vw;
+  height: 100vh;
+  /* visuals */
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ball {
+  position: relative;
+  /* box model */
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin: 0.5rem;
+  /* misc */
+  animation-name: jump;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.ball-1 {
+  /* visuals */
+  background-color: crimson;
+  animation-timing-function: linear;
+}
+
+.ball-2 {
+  /* visuals */
+  background-color: burlywood;
+  animation-timing-function: ease-out;
+}
+
+.ball-3 {
+  /* visuals */
+  background-color: cadetblue;
+  animation-timing-function: ease;
+}
+
+@keyframes jump {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 100px;
+  }
+  100% {
+    top: 0px;
+  }
+}
