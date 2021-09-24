@@ -5,16 +5,23 @@
   @content;
 }
 
-@mixin rings($start, $end) {
-  $start: $start - 1; // reseting start value
-  @for $count from $start through $end {
-    $value: 10px * $count;
-    span:nth-child(#{$count + 1}) {
+@function timeDelay($totalItems, $currItem, $timeDelay) {
+  $time: $totalItems * $timeDelay;
+  $delay: $time - $currItem * $timeDelay;
+  @return $delay;
+}
+
+@mixin rings($first, $last) {
+  $first: $first - 1; // reseting first value
+  @for $count from $first to $last {
+    $value: 10px * $count; // position value
+    $currItem: $count + 1;
+    span:nth-child(#{$currItem}) {
       top: $value;
       right: $value;
       bottom: $value;
       left: $value;
-      animation-delay: 0s;
+      animation-delay: timeDelay(15, $currItem, 0.1s);
     }
   }
 }
