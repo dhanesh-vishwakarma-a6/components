@@ -1,3 +1,100 @@
 @import "reset";
+@import "mixin";
+@import "layout";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 @include global-reset;
+
+* {
+  font-family: "poppins", sans-serif;
+}
+
+.flexBox {
+  @include flex-box;
+}
+
+body {
+  @extend .flexBox;
+  min-height: 100vh;
+  background: linear-gradient(#0f4675, #0f4675 50%, #fff 50%, #fff 100%);
+}
+
+.container {
+  @extend .flexBox;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 1100px;
+
+  .card {
+    // position
+    position: relative;
+    // box model
+    width: 320px;
+    @include padding(100px 40px 60px);
+    background: #fff;
+    // misc
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+
+    &::before {
+      content: "";
+      // position
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // visuals
+      background: #ff226d;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.5s;
+    }
+
+    &:hover::before {
+      transform: scaleY(1);
+      transform-origin: bottom;
+      transition: transform 0.5s;
+    }
+
+    h2 {
+      // position
+      position: absolute;
+      left: 40px;
+      top: 60px;
+      // typography
+      font-size: 4em;
+      font-weight: 800;
+      // misc
+      z-index: 1;
+      opacity: 0.1;
+      transition: 0.5s;
+    }
+
+    &:hover h2 {
+      opacity: 1;
+      color: #fff;
+      transform: translateY(-40px);
+    }
+
+    h3 {
+      position: relative;
+      font-size: 1.5em;
+      z-index: 2;
+      color: #333;
+      transition: 0.5s;
+    }
+
+    p {
+      position: relative;
+      z-index: 2;
+      color: #555;
+      transition: 0.5s;
+    }
+
+    &:hover h3,
+    &:hover p {
+      color: #fff;
+    }
+  }
+}

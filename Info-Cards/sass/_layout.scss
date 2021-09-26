@@ -1,0 +1,12 @@
+@mixin flex-box($main: center, $cross: center) {
+  display: flex;
+  justify-content: $main;
+  align-items: $cross;
+  @content;
+}
+
+@mixin padding($values...) {
+  @each $val in $values {
+    padding: $val;
+  }
+}
