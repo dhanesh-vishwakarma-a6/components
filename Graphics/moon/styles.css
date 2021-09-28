@@ -1,0 +1,32 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  /* visuals */
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box model */
+  width: 100vw;
+  height: 100vh;
+}
+
+.moon {
+  /* visuals */
+  background-color: transparent;
+  /* box model */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 25px 10px 0px 0px #fff;
+}
